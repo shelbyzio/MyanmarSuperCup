@@ -110,6 +110,14 @@
                 { home: 'YMU', away: 'MAH', hScore: 4, aScore: 1 },
                 { home: 'YDN', away: 'ISP', hScore: 5, aScore: 5 },
                 { home: 'YNG', away: 'DPU' }
+            ],
+            1: [
+                { home: 'YDN', away: 'DPU' },
+                { home: 'RKH', away: 'YNG', hScore: 2, aScore: 2 },
+                { home: 'SHN', away: 'ISP', hScore: 1, aScore: 3 },
+                { home: 'AYA', away: 'TAU', hScore: 2, aScore: 1 },
+                { home: 'YMU', away: 'DSU', hScore: 3, aScore: 2 },
+                { home: 'MAH', away: 'HTU', hScore: 3, aScore: 2 }
             ]
         };
 
@@ -153,6 +161,8 @@
                         const h = TEAMS_LIST.find(t => t.id === match.home);
                         const a = TEAMS_LIST.find(t => t.id === match.away);
                         
+                        if(!h || !a) return;
+                        
                         h.mp++; a.mp++;
                         h.gf += match.hScore; h.ga += match.aScore;
                         a.gf += match.aScore; a.ga += match.hScore;
@@ -187,6 +197,9 @@
             const container = document.getElementById('fixtures-grid');
             container.innerHTML = '';
             document.getElementById('fixture-round-title').innerText = `ROUND ${currentViewingMatchday + 1}`;
+            
+            if(!fixtures[currentViewingMatchday]) return;
+
             fixtures[currentViewingMatchday].forEach(match => {
                 const h = TEAMS_LIST.find(t => t.id === match.home);
                 const a = TEAMS_LIST.find(t => t.id === match.away);
