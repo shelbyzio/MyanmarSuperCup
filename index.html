@@ -103,61 +103,20 @@
         ].map(t => ({...t, mp:0, w:0, d:0, l:0, gf:0, ga:0, gd:0, pts:0}));
 
         const MATCH_RESULTS = {
-            0: [
-                { home: 'RKH', away: 'TAU', hScore: 4, aScore: 1 },
-                { home: 'SHN', away: 'DSU', hScore: 1, aScore: 2 },
-                { home: 'AYA', away: 'HTU', hScore: 2, aScore: 2 },
-                { home: 'YMU', away: 'MAH', hScore: 4, aScore: 1 },
-                { home: 'YDN', away: 'ISP', hScore: 5, aScore: 5 },
-                { home: 'YNG', away: 'DPU', hScore: 6, aScore: 2 }
-            ],
-            1: [
-                { home: 'YDN', away: 'DPU', hScore: 5, aScore: 0 },
-                { home: 'RKH', away: 'YNG', hScore: 2, aScore: 2 },
-                { home: 'SHN', away: 'ISP', hScore: 1, aScore: 3 },
-                { home: 'AYA', away: 'TAU', hScore: 2, aScore: 1 },
-                { home: 'YMU', away: 'DSU', hScore: 3, aScore: 2 },
-                { home: 'MAH', away: 'HTU', hScore: 3, aScore: 2 }
-            ],
-            2: [
-                { home: 'RKH', away: 'DPU', hScore: 6, aScore: 4 },
-                { home: 'SHN', away: 'YDN', hScore: 2, aScore: 3 },
-                { home: 'AYA', away: 'YNG', hScore: 2, aScore: 2 },
-                { home: 'YMU', away: 'ISP', hScore: 1, aScore: 6 },
-                { home: 'MAH', away: 'TAU', hScore: 6, aScore: 0 },
-                { home: 'HTU', away: 'DSU', hScore: 2, aScore: 1 }
-            ],
-            3: [
-                { home: 'SHN', away: 'DPU', hScore: 3, aScore: 0 },
-                { home: 'AYA', away: 'RKH', hScore: 2, aScore: 3 },
-                { home: 'YMU', away: 'YDN', hScore: 0, aScore: 3 },
-                { home: 'MAH', away: 'YNG', hScore: 4, aScore: 4 },
-                { home: 'HTU', away: 'ISP', hScore: 2, aScore: 8 },
-                { home: 'DSU', away: 'TAU', status: 'Cancelled' }
-            ],
-            4: [
-                { home: 'AYA', away: 'DPU', hScore: 3, aScore: 3 },
-                { home: 'YMU', away: 'SHN', hScore: 2, aScore: 2 },
-                { home: 'MAH', away: 'RKH', hScore: 5, aScore: 13 },
-                { home: 'HTU', away: 'YDN', hScore: 1, aScore: 4 },
-                { home: 'DSU', away: 'YNG', hScore: 0, aScore: 6 },
-                { home: 'TAU', away: 'ISP', hScore: 2, aScore: 7 }
-            ],
-            5: [
-                { home: 'YMU', away: 'DPU', hScore: 3, aScore: 0 },
-                { home: 'MAH', away: 'AYA', hScore: 4, aScore: 4 },
-                { home: 'HTU', away: 'SHN', hScore: 3, aScore: 2 },
-                { home: 'DSU', away: 'RKH', hScore: 3, aScore: 7 },
-                { home: 'TAU', away: 'YDN', hScore: 3, aScore: 2 },
-                { home: 'ISP', away: 'YNG', hScore: 3, aScore: 3 }
-            ],
-            6: [
-                { home: 'MAH', away: 'DPU', hScore: 0, aScore: 5 },
-                { home: 'HTU', away: 'YMU', hScore: 3, aScore: 4 },
-                { home: 'DSU', away: 'AYA', hScore: 2, aScore: 5 },
-                { home: 'TAU', away: 'SHN', hScore: 2, aScore: 2 },
-                { home: 'ISP', away: 'RKH', hScore: 3, aScore: 2 },
-                { home: 'YNG', away: 'YDN', hScore: 2, aScore: 3 }
+            0: [{ home: 'RKH', away: 'TAU', hScore: 4, aScore: 1 }, { home: 'SHN', away: 'DSU', hScore: 1, aScore: 2 }, { home: 'AYA', away: 'HTU', hScore: 2, aScore: 2 }, { home: 'YMU', away: 'MAH', hScore: 4, aScore: 1 }, { home: 'YDN', away: 'ISP', hScore: 5, aScore: 5 }, { home: 'YNG', away: 'DPU', hScore: 6, aScore: 2 }],
+            1: [{ home: 'YDN', away: 'DPU', hScore: 5, aScore: 0 }, { home: 'RKH', away: 'YNG', hScore: 2, aScore: 2 }, { home: 'SHN', away: 'ISP', hScore: 1, aScore: 3 }, { home: 'AYA', away: 'TAU', hScore: 2, aScore: 1 }, { home: 'YMU', away: 'DSU', hScore: 3, aScore: 2 }, { home: 'MAH', away: 'HTU', hScore: 3, aScore: 2 }],
+            2: [{ home: 'RKH', away: 'DPU', hScore: 6, aScore: 4 }, { home: 'SHN', away: 'YDN', hScore: 2, aScore: 3 }, { home: 'AYA', away: 'YNG', hScore: 2, aScore: 2 }, { home: 'YMU', away: 'ISP', hScore: 1, aScore: 6 }, { home: 'MAH', away: 'TAU', hScore: 6, aScore: 0 }, { home: 'HTU', away: 'DSU', hScore: 2, aScore: 1 }],
+            3: [{ home: 'SHN', away: 'DPU', hScore: 3, aScore: 0 }, { home: 'AYA', away: 'RKH', hScore: 2, aScore: 3 }, { home: 'YMU', away: 'YDN', hScore: 0, aScore: 3 }, { home: 'MAH', away: 'YNG', hScore: 4, aScore: 4 }, { home: 'HTU', away: 'ISP', hScore: 2, aScore: 8 }, { home: 'DSU', away: 'TAU', status: 'Cancelled' }],
+            4: [{ home: 'AYA', away: 'DPU', hScore: 3, aScore: 3 }, { home: 'YMU', away: 'SHN', hScore: 2, aScore: 2 }, { home: 'MAH', away: 'RKH', hScore: 5, aScore: 13 }, { home: 'HTU', away: 'YDN', hScore: 1, aScore: 4 }, { home: 'DSU', away: 'YNG', hScore: 0, aScore: 6 }, { home: 'TAU', away: 'ISP', hScore: 2, aScore: 7 }],
+            5: [{ home: 'YMU', away: 'DPU', hScore: 3, aScore: 0 }, { home: 'MAH', away: 'AYA', hScore: 4, aScore: 4 }, { home: 'HTU', away: 'SHN', hScore: 3, aScore: 2 }, { home: 'DSU', away: 'RKH', hScore: 3, aScore: 7 }, { home: 'TAU', away: 'YDN', hScore: 3, aScore: 2 }, { home: 'ISP', away: 'YNG', hScore: 3, aScore: 3 }],
+            6: [{ home: 'MAH', away: 'DPU', hScore: 0, aScore: 5 }, { home: 'HTU', away: 'YMU', hScore: 3, aScore: 4 }, { home: 'DSU', away: 'AYA', hScore: 2, aScore: 5 }, { home: 'TAU', away: 'SHN', hScore: 2, aScore: 2 }, { home: 'ISP', away: 'RKH', hScore: 3, aScore: 2 }, { home: 'YNG', away: 'YDN', hScore: 2, aScore: 3 }],
+            7: [
+                { home: 'HTU', away: 'DPU', hScore: 2, aScore: 0 },
+                { home: 'DSU', away: 'MAH', hScore: 3, aScore: 0 },
+                { home: 'TAU', away: 'YMU', hScore: 3, aScore: 3 },
+                { home: 'ISP', away: 'AYA', hScore: 5, aScore: 3 },
+                { home: 'YNG', away: 'SHN', hScore: 6, aScore: 2 },
+                { home: 'YDN', away: 'RKH', hScore: 3, aScore: 1 }
             ]
         };
 
