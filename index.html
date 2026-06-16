@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MNL Style 12-Team Tournament Hub</title>
+    <title>German Bundesliga</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -11,24 +11,24 @@
         body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #1e293b; }
         ::-webkit-scrollbar { width: 4px; height: 4px; }
         ::-webkit-scrollbar-track { background: #e2e8f0; }
-        ::-webkit-scrollbar-thumb { background: #0298f5; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #d3010c; border-radius: 10px; }
         .scrollbar-hidden::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <header class="bg-[#003399] border-b-4 border-white sticky top-0 z-50 shadow-md">
+    <header class="bg-[#d3010c] border-b-4 border-white sticky top-0 z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-3 py-3 flex flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-2">
                 <div class="bg-white p-1 rounded-lg h-9 w-9 overflow-hidden flex items-center justify-center">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKDqLfPOsbfcS0vYPM9vCJd-w6RPnP9YDMrQ&s" alt="MNL" class="h-full w-full object-contain">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/d/df/Bundesliga_logo_%282017%29.svg" alt="Bundesliga" class="h-full w-full object-contain">
                 </div>
                 <div>
-                    <h1 class="text-sm font-black text-white">MYANMAR NATIONAL <span class="text-white">LEAGUE</span></h1>
-                    <p class="text-[8px] text-blue-200 font-bold uppercase tracking-widest">THE ONE COMMUNITY</p>
+                    <h1 class="text-sm font-black text-white">German <span class="text-white">Bundesliga</span></h1>
+                    <p class="text-[8px] text-red-200 font-bold uppercase tracking-widest">THE ONE COMMUNITY</p>
                 </div>
             </div>
             <div class="flex bg-white/20 p-0.5 rounded-lg border border-white/30">
-                <button id="tab-fixtures-btn" onclick="switchTab('fixtures')" class="px-3 py-1.5 rounded-md text-[10px] font-bold text-[#003399] bg-white shadow-lg">Fixtures</button>
+                <button id="tab-fixtures-btn" onclick="switchTab('fixtures')" class="px-3 py-1.5 rounded-md text-[10px] font-bold text-[#d3010c] bg-white shadow-lg">Fixtures</button>
                 <button id="tab-standings-btn" onclick="switchTab('standings')" class="px-3 py-1.5 rounded-md text-[10px] font-bold text-white">Standings</button>
             </div>
         </div>
@@ -36,23 +36,23 @@
 
     <main class="max-w-7xl mx-auto px-3 py-5 flex-1 w-full">
         <div class="grid grid-cols-2 gap-2 mb-5">
-            <div class="bg-white border border-blue-100 p-3 rounded-xl flex items-center gap-2 shadow-sm">
-                <i class="fa-solid fa-shield-halved text-[#003399] text-sm"></i>
+            <div class="bg-white border border-red-100 p-3 rounded-xl flex items-center gap-2 shadow-sm">
+                <i class="fa-solid fa-shield-halved text-[#d3010c] text-sm"></i>
                 <div><span class="text-[8px] text-slate-500 block uppercase">TEAMS</span><span class="text-sm font-bold text-slate-800">12</span></div>
             </div>
-            <div class="bg-white border border-blue-100 p-3 rounded-xl flex items-center gap-2 shadow-sm">
-                <i class="fa-solid fa-calendar-check text-[#003399] text-sm"></i>
-                <div><span class="text-[8px] text-slate-500 block uppercase">MATCHES</span><span class="text-sm font-bold text-slate-800">78</span></div>
+            <div class="bg-white border border-red-100 p-3 rounded-xl flex items-center gap-2 shadow-sm">
+                <i class="fa-solid fa-calendar-check text-[#d3010c] text-sm"></i>
+                <div><span class="text-[8px] text-slate-500 block uppercase">MATCHES</span><span class="text-sm font-bold text-slate-800">66</span></div>
             </div>
         </div>
 
         <div id="tab-fixtures-content" class="space-y-4">
             <div class="bg-white border border-slate-200 rounded-xl p-3 shadow-sm">
-                <span class="text-[10px] font-bold text-[#003399] uppercase mb-2 block">Matchday Selector</span>
+                <span class="text-[10px] font-bold text-[#d3010c] uppercase mb-2 block">Matchday Selector</span>
                 <div class="flex gap-2 overflow-x-auto scrollbar-hidden pb-1" id="matchday-selector-container"></div>
             </div>
 
-            <div class="flex justify-between items-center bg-[#003399] p-3 rounded-xl shadow-lg">
+            <div class="flex justify-between items-center bg-[#d3010c] p-3 rounded-xl shadow-lg">
                 <h2 class="text-sm font-black text-white" id="fixture-round-title">ROUND 1</h2>
                 <div class="flex gap-1">
                     <button onclick="changeMatchday(-1)" class="w-8 h-8 bg-white/20 rounded-lg text-white"><i class="fa-solid fa-chevron-left"></i></button>
@@ -76,7 +76,7 @@
                             <th class="py-3 hidden sm:table-cell">GF</th>
                             <th class="py-3 hidden sm:table-cell">GA</th>
                             <th class="py-3">GD</th>
-                            <th class="py-3 text-[#003399]">pts</th>
+                            <th class="py-3 text-[#d3010c]">pts</th>
                         </tr>
                     </thead>
                     <tbody id="standings-table-body" class="divide-y divide-slate-100 font-medium text-slate-800"></tbody>
@@ -87,33 +87,110 @@
 
     <script>
         const TEAMS_LIST = [
-            { id: "YNG", name: "Yangon United", logo: "https://upload.wikimedia.org/wikipedia/en/8/83/Yangon_United_F.C.png", tg: "https://t.me/MRTONE3" },
-            { id: "YDN", name: "Yadanarbon FC", logo: "https://upload.wikimedia.org/wikipedia/en/8/83/Yadanabon_FC.png", tg: "https://t.me/Ranger13102003" },
-            { id: "RKH", name: "Rakhine United", logo: "https://upload.wikimedia.org/wikipedia/en/e/e2/Rakhine_United_Football_Club.jpg", tg: "https://t.me/kenzjust" },
-            { id: "SHN", name: "Shan United", logo: "https://upload.wikimedia.org/wikipedia/en/4/4a/Shan_United_Crest_2015.png", tg: "https://t.me/Alinn145678" },
-            { id: "AYA", name: "Ayeyarwady United", logo: "https://upload.wikimedia.org/wikipedia/en/0/04/Ayeyawady_FC_logo.png", tg: "https://t.me/Nyanzayar" },
-            { id: "YMU", name: "Yarmanya United", logo: "https://tmssl.akamaized.net//images/wappen/head/125345.png?lm=1734537118", tg: "https://t.me/Xuman88" },
-            { id: "MAH", name: "Mahar United", logo: "https://sportcdns.live/team/bd64e5c3bfb068cbf8ddd03380c7478978d351f9ade615758640d0683da721e8.webp", tg: "https://t.me/oct_NaingDD11" },
-            { id: "HTU", name: "Hantharwady United", logo: "https://upload.wikimedia.org/wikipedia/en/6/66/HANTHARWADY-UTD-FC-143x156.jpg", tg: "https://t.me/Fyhjfj_8046206" },
-            { id: "DSU", name: "Dagon Star United", logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0kyEPh1DrFb1Emc2XKoTh7UpE7bmE8B8PSg&s", tg: "https://t.me/phoehtet2007" },
-            { id: "TAU", name: "Thitsar Arman FC", logo: "https://sportcdns.live/team/936ef05b5d45020a8d2d2bf8319534233519edd0bfeedb28d809ad3c5597d6fe.webp", tg: "https://t.me/Aug2929" },
-            { id: "ISP", name: "ISPE FC", logo: "https://upload.wikimedia.org/wikipedia/en/9/98/I.S.P.E_F.C._logo.png", tg: "https://t.me/DjOmega4102005" },
-            { id: "DPU", name: "Dagon Port", logo: "https://tmssl.akamaized.net//images/wappen/head/116571.png?lm=1723840963", tg: "https://t.me/lugyiko123" }
+            { id: "FCB", name: "Bayern Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg", tg: "https://t.me/itxkian223Z" },
+            { id: "BVB", name: "Dortmund", logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg", tg: "https://t.me/@soelay0" },
+            { id: "RBL", name: "RB Leipzig", logo: "https://upload.wikimedia.org/wikipedia/en/0/04/RB_Leipzig_2014_logo.svg", tg: "https://t.me/UKyawMaung13" },
+            { id: "B04", name: "Leverkusen", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Bayer_04_Leverkusen_logo.svg/1280px-Bayer_04_Leverkusen_logo.svg.png", tg: "https://t.me/johnharry73" },
+            { id: "SGE", name: "Frankfurt", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Eintracht_Frankfurt_crest.svg/1280px-Eintracht_Frankfurt_crest.svg.png", tg: "https://t.me/kenzjust" },
+            { id: "FCU", name: "Union Berlin", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/1._FC_Union_Berlin_Logo.svg", tg: "https://t.me/Mg_Leon2" },
+            { id: "SCF", name: "Freiburg", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/SC_Freiburg_logo.svg/960px-SC_Freiburg_logo.svg.png", tg: "https://t.me/Xuman88" },
+            { id: "SVW", name: "Werder Bremen", logo: "https://upload.wikimedia.org/wikipedia/commons/b/be/SV-Werder-Bremen-Logo.svg", tg: "https://t.me/Nyanzayar" },
+            { id: "STP", name: "Saint Pauli", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/81/FC_St._Pauli_logo.svg/250px-FC_St._Pauli_logo.svg.png", tg: "https://t.me/Cr7hmh" },
+            { id: "WOB", name: "Wolfsburg", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/VfL_Wolfsburg_logo_2026.svg/1280px-VfL_Wolfsburg_logo_2026.svg.png", tg: "https://t.me/Aung_Htet_Paing23" },
+            { id: "VFB", name: "VFB Stuttgart", logo: "https://upload.wikimedia.org/wikipedia/commons/e/eb/VfB_Stuttgart_1893_Logo.svg", tg: "https://t.me/MRTONE3" },
+            { id: "M05", name: "FSV Mainz 05", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Logo_Mainz_05.svg", tg: "https://t.me/Nyi2005MAY" }
         ].map(t => ({...t, mp:0, w:0, d:0, l:0, gf:0, ga:0, gd:0, pts:0}));
 
+        // ရလဒ်များထည့်ရန် Format - { h: 'HomeID', a: 'AwayID', hs: Score, as: Score }
         const MATCH_RESULTS = {
-            0: [{ home: 'RKH', away: 'TAU', hScore: 4, aScore: 1 }, { home: 'SHN', away: 'DSU', hScore: 1, aScore: 2 }, { home: 'AYA', away: 'HTU', hScore: 2, aScore: 2 }, { home: 'YMU', away: 'MAH', hScore: 4, aScore: 1 }, { home: 'YDN', away: 'ISP', hScore: 5, aScore: 5 }, { home: 'YNG', away: 'DPU', hScore: 6, aScore: 2 }],
-            1: [{ home: 'YDN', away: 'DPU', hScore: 5, aScore: 0 }, { home: 'RKH', away: 'YNG', hScore: 2, aScore: 2 }, { home: 'SHN', away: 'ISP', hScore: 1, aScore: 3 }, { home: 'AYA', away: 'TAU', hScore: 2, aScore: 1 }, { home: 'YMU', away: 'DSU', hScore: 3, aScore: 2 }, { home: 'MAH', away: 'HTU', hScore: 3, aScore: 2 }],
-            2: [{ home: 'RKH', away: 'DPU', hScore: 6, aScore: 4 }, { home: 'SHN', away: 'YDN', hScore: 2, aScore: 3 }, { home: 'AYA', away: 'YNG', hScore: 2, aScore: 2 }, { home: 'YMU', away: 'ISP', hScore: 1, aScore: 6 }, { home: 'MAH', away: 'TAU', hScore: 6, aScore: 0 }, { home: 'HTU', away: 'DSU', hScore: 2, aScore: 1 }],
-            3: [{ home: 'SHN', away: 'DPU', hScore: 3, aScore: 0 }, { home: 'AYA', away: 'RKH', hScore: 2, aScore: 3 }, { home: 'YMU', away: 'YDN', hScore: 0, aScore: 3 }, { home: 'MAH', away: 'YNG', hScore: 4, aScore: 4 }, { home: 'HTU', away: 'ISP', hScore: 2, aScore: 8 }, { home: 'DSU', away: 'TAU', status: 'Cancelled' }],
-            4: [{ home: 'AYA', away: 'DPU', hScore: 3, aScore: 3 }, { home: 'YMU', away: 'SHN', hScore: 2, aScore: 2 }, { home: 'MAH', away: 'RKH', hScore: 5, aScore: 13 }, { home: 'HTU', away: 'YDN', hScore: 1, aScore: 4 }, { home: 'DSU', away: 'YNG', hScore: 0, aScore: 6 }, { home: 'TAU', away: 'ISP', hScore: 2, aScore: 7 }],
-            5: [{ home: 'YMU', away: 'DPU', hScore: 3, aScore: 0 }, { home: 'MAH', away: 'AYA', hScore: 4, aScore: 4 }, { home: 'HTU', away: 'SHN', hScore: 3, aScore: 2 }, { home: 'DSU', away: 'RKH', hScore: 3, aScore: 7 }, { home: 'TAU', away: 'YDN', hScore: 3, aScore: 2 }, { home: 'ISP', away: 'YNG', hScore: 3, aScore: 3 }],
-            6: [{ home: 'MAH', away: 'DPU', hScore: 0, aScore: 5 }, { home: 'HTU', away: 'YMU', hScore: 3, aScore: 4 }, { home: 'DSU', away: 'AYA', hScore: 2, aScore: 5 }, { home: 'TAU', away: 'SHN', hScore: 2, aScore: 2 }, { home: 'ISP', away: 'RKH', hScore: 3, aScore: 2 }, { home: 'YNG', away: 'YDN', hScore: 2, aScore: 3 }],
-            7: [{ home: 'HTU', away: 'DPU', hScore: 2, aScore: 0 }, { home: 'DSU', away: 'MAH', hScore: 3, aScore: 0 }, { home: 'TAU', away: 'YMU', hScore: 3, aScore: 3 }, { home: 'ISP', away: 'AYA', hScore: 5, aScore: 3 }, { home: 'YNG', away: 'SHN', hScore: 2, aScore: 3}, { home: 'YDN', away: 'RKH', hScore: 3, aScore: 1 }],
-            8: [{ home: 'DSU', away: 'DPU', status: 'Cancelled' }, { home: 'TAU', away: 'HTU', hScore: 1, aScore: 2 }, { home: 'ISP', away: 'MAH', hScore: 3, aScore: 0 }, { home: 'YNG', away: 'YMU', hScore: 3, aScore: 5 }, { home: 'YDN', away: 'AYA', hScore: 2, aScore: 1 }, { home: 'RKH', away: 'SHN', hScore: 5, aScore: 7 }],
-            9: [{ home: 'TAU', away: 'DPU', hScore: 3, aScore: 0 }, { home: 'ISP', away: 'DSU', hScore: 9, aScore: 1 }, { home: 'YNG', away: 'HTU', hScore: 2, aScore: 4 }, { home: 'YDN', away: 'MAH', hScore: 3, aScore: 0 }, { home: 'RKH', away: 'YMU', hScore: 4, aScore: 3 }, { home: 'SHN', away: 'AYA', hScore: 3, aScore: 1 }],
-            9: [{ home: 'TAU', away: 'DPU', hScore: 3, aScore: 0 }, { home: 'ISP', away: 'DSU', hScore: 9, aScore: 1 }, { home: 'YNG', away: 'HTU', hScore: 2, aScore: 4 }, { home: 'YDN', away: 'MAH', hScore: 3, aScore: 0 }, { home: 'RKH', away: 'YMU', hScore: 4, aScore: 3 }, { home: 'SHN', away: 'AYA', hScore: 3, aScore: 1 }],
-            10: [{ home: 'ISP', away: 'DPU', hScore: 3, aScore: 0 }, { home: 'YNG', away: 'TAU', hScore: 0, aScore: 3 }, { home: 'YDN', away: 'DSU', hScore: 3, aScore: 0 }, { home: 'RKH', away: 'HTU', hScore: 5, aScore: 0 }, { home: 'SHN', away: 'MAH', hScore: 3, aScore: 0 }, { home: 'AYA', away: 'YMU', hScore: 2, aScore: 5 }]
+            0: [
+                { h: 'RBL', a: 'WOB',  },
+                { h: 'B04', a: 'STP',  },
+                { h: 'SGE', a: 'SVW',  },
+                { h: 'FCU', a: 'SCF',  },
+                { h: 'BVB', a: 'VFB', },
+                { h: 'FCB', a: 'M05',}
+            ],
+            1: [
+                { h: 'BVB', a: 'M05' },
+                { h: 'RBL', a: 'FCB' },
+                { h: 'B04', a: 'VFB' },
+                { h: 'SGE', a: 'WOB' },
+                { h: 'FCU', a: 'STP' },
+                { h: 'SCF', a: 'SVW' }
+            ],
+            2: [
+                { h: 'RBL', a: 'M05' },
+                { h: 'B04', a: 'BVB' },
+                { h: 'SGE', a: 'FCB' },
+                { h: 'FCU', a: 'VFB' },
+                { h: 'SCF', a: 'WOB' },
+                { h: 'SVW', a: 'STP' }
+            ],
+            3: [
+                { h: 'B04', a: 'M05' },
+                { h: 'SGE', a: 'RBL' },
+                { h: 'FCU', a: 'BVB' },
+                { h: 'SCF', a: 'FCB' },
+                { h: 'SVW', a: 'VFB' },
+                { h: 'STP', a: 'WOB' }
+            ],
+            4: [
+                { h: 'SGE', a: 'M05' },
+                { h: 'FCU', a: 'B04' },
+                { h: 'SCF', a: 'RBL' },
+                { h: 'SVW', a: 'BVB' },
+                { h: 'STP', a: 'FCB' },
+                { h: 'WOB', a: 'VFB' }
+            ],
+            5: [
+                { h: 'FCU', a: 'M05' },
+                { h: 'SCF', a: 'SGE' },
+                { h: 'SVW', a: 'B04' },
+                { h: 'STP', a: 'RBL' },
+                { h: 'WOB', a: 'BVB' },
+                { h: 'VFB', a: 'FCB' }
+            ],
+            6: [
+                { h: 'SCF', a: 'M05' },
+                { h: 'SVW', a: 'FCU' },
+                { h: 'STP', a: 'SGE' },
+                { h: 'WOB', a: 'B04' },
+                { h: 'VFB', a: 'RBL' },
+                { h: 'FCB', a: 'BVB' }
+            ],
+            7: [
+                { h: 'SVW', a: 'M05' },
+                { h: 'STP', a: 'SCF' },
+                { h: 'WOB', a: 'FCU' },
+                { h: 'VFB', a: 'SGE' },
+                { h: 'FCB', a: 'B04' },
+                { h: 'BVB', a: 'RBL' }
+            ],
+            8: [
+                { h: 'STP', a: 'M05' },
+                { h: 'WOB', a: 'SVW' },
+                { h: 'VFB', a: 'SCF' },
+                { h: 'FCB', a: 'FCU' },
+                { h: 'BVB', a: 'SGE' },
+                { h: 'RBL', a: 'B04' }
+            ],
+            9: [
+                { h: 'WOB', a: 'M05' },
+                { h: 'VFB', a: 'STP' },
+                { h: 'FCB', a: 'SVW' },
+                { h: 'BVB', a: 'SCF' },
+                { h: 'RBL', a: 'FCU' },
+                { h: 'B04', a: 'SGE' }
+            ],
+            10: [
+                { h: 'VFB', a: 'M05' },
+                { h: 'FCB', a: 'WOB' },
+                { h: 'BVB', a: 'STP' },
+                { h: 'RBL', a: 'SVW' },
+                { h: 'B04', a: 'SCF' },
+                { h: 'SGE', a: 'FCU' }
+            ]
         };
 
         let fixtures = [], currentViewingMatchday = 0, TOTAL_ROUNDS = 11;
@@ -129,8 +206,8 @@
             document.getElementById('tab-fixtures-content').classList.toggle('hidden', tab !== 'fixtures');
             document.getElementById('tab-standings-content').classList.toggle('hidden', tab !== 'standings');
 
-            document.getElementById('tab-fixtures-btn').className = tab === 'fixtures' ? "px-3 py-1.5 rounded-md text-[10px] font-bold text-[#003399] bg-white shadow-lg" : "px-3 py-1.5 rounded-md text-[10px] font-bold text-white";
-            document.getElementById('tab-standings-btn').className = tab === 'standings' ? "px-3 py-1.5 rounded-md text-[10px] font-bold text-[#003399] bg-white shadow-lg" : "px-3 py-1.5 rounded-md text-[10px] font-bold text-white";
+            document.getElementById('tab-fixtures-btn').className = tab === 'fixtures' ? "px-3 py-1.5 rounded-md text-[10px] font-bold text-[#d3010c] bg-white shadow-lg" : "px-3 py-1.5 rounded-md text-[10px] font-bold text-white";
+            document.getElementById('tab-standings-btn').className = tab === 'standings' ? "px-3 py-1.5 rounded-md text-[10px] font-bold text-[#d3010c] bg-white shadow-lg" : "px-3 py-1.5 rounded-md text-[10px] font-bold text-white";
 
             if(tab === 'standings') updateStandingsTable();
         }
@@ -152,19 +229,19 @@
 
             Object.values(MATCH_RESULTS).forEach(round => {
                 round.forEach(match => {
-                    if (match.hScore !== undefined && match.aScore !== undefined) {
-                        const h = TEAMS_LIST.find(t => t.id === match.home);
-                        const a = TEAMS_LIST.find(t => t.id === match.away);
+                    if (match.hs !== undefined && match.as !== undefined) {
+                        const h = TEAMS_LIST.find(t => t.id === match.h);
+                        const a = TEAMS_LIST.find(t => t.id === match.a);
 
                         if(!h || !a) return;
 
                         h.mp++; a.mp++;
-                        h.gf += match.hScore; h.ga += match.aScore;
-                        a.gf += match.aScore; a.ga += match.hScore;
+                        h.gf += match.hs; h.ga += match.as;
+                        a.gf += match.as; a.ga += match.hs;
                         h.gd = h.gf - h.ga; a.gd = a.gf - a.ga;
 
-                        if (match.hScore > match.aScore) { h.pts += 3; h.w++; a.l++; }
-                        else if (match.hScore < match.aScore) { a.pts += 3; a.w++; h.l++; }
+                        if (match.hs > match.as) { h.pts += 3; h.w++; a.l++; }
+                        else if (match.hs < match.as) { a.pts += 3; a.w++; h.l++; }
                         else { h.pts += 1; a.pts += 1; h.d++; a.d++; }
                     }
                 });
@@ -175,12 +252,12 @@
             const container = document.getElementById('matchday-selector-container');
             for (let r = 0; r < TOTAL_ROUNDS; r++) {
                 const btn = document.createElement('button');
-                btn.className = `flex-shrink-0 px-3 py-1 rounded-lg font-bold text-[10px] border ${r === 0 ? 'bg-[#003399] text-white' : 'bg-white text-slate-500 border-slate-200'}`;
+                btn.className = `flex-shrink-0 px-3 py-1 rounded-lg font-bold text-[10px] border ${r === 0 ? 'bg-[#d3010c] text-white' : 'bg-white text-slate-500 border-slate-200'}`;
                 btn.innerText = `R${r + 1}`;
                 btn.onclick = () => { 
                     currentViewingMatchday = r; 
                     document.querySelectorAll('#matchday-selector-container button').forEach((b, idx) => {
-                        b.className = `flex-shrink-0 px-3 py-1 rounded-lg font-bold text-[10px] border ${idx === r ? 'bg-[#003399] text-white' : 'bg-white text-slate-500 border-slate-200'}`;
+                        b.className = `flex-shrink-0 px-3 py-1 rounded-lg font-bold text-[10px] border ${idx === r ? 'bg-[#d3010c] text-white' : 'bg-white text-slate-500 border-slate-200'}`;
                     });
                     renderFixtures(); 
                 };
@@ -199,9 +276,9 @@
                 const h = TEAMS_LIST.find(t => t.id === match.home);
                 const a = TEAMS_LIST.find(t => t.id === match.away);
 
-                const result = MATCH_RESULTS[currentViewingMatchday]?.find(r => r.home === h.id && r.away === a.id);
-                const isCancelled = result && result.status === 'Cancelled';
-                const hasScore = result && result.hScore !== undefined && result.aScore !== undefined;
+                const result = MATCH_RESULTS[currentViewingMatchday]?.find(r => r.h === h.id && r.a === a.id);
+                const isCancelled = result && result.st === 'Cancelled';
+                const hasScore = result && result.hs !== undefined && result.as !== undefined;
 
                 const card = document.createElement('div');
                 card.className = "bg-white border border-slate-100 rounded-xl p-3 flex items-center justify-between shadow-sm";
@@ -211,7 +288,7 @@
                         <span class="text-xs font-bold truncate text-slate-700">${h.name}</span>
                     </a>
                     <div class="flex flex-col items-center w-[20%]">
-                        ${isCancelled ? `<span class="text-red-500 font-black text-[8px] uppercase">Cancelled</span>` : (hasScore ? `<span class="text-[#003399] font-black text-sm">${result.hScore} - ${result.aScore}</span>` : '<span class="text-[#003399] font-black text-[10px]">VS</span>')}
+                        ${isCancelled ? `<span class="text-red-500 font-black text-[8px] uppercase">Cancelled</span>` : (hasScore ? `<span class="text-[#d3010c] font-black text-sm">${result.hs} - ${result.as}</span>` : '<span class="text-[#d3010c] font-black text-[10px]">VS</span>')}
                     </div>
                     <a href="${a.tg}" target="_blank" class="flex items-center gap-2 w-[40%] justify-end cursor-pointer hover:opacity-70">
                         <span class="text-xs font-bold truncate text-slate-700">${a.name}</span>
@@ -226,7 +303,7 @@
             const sortedTeams = [...TEAMS_LIST].sort((a, b) => b.pts - a.pts || b.gd - a.gd);
 
             tbody.innerHTML = sortedTeams.map((team, idx) => `
-                <tr class="hover:bg-blue-50 transition-colors">
+                <tr class="hover:bg-red-50 transition-colors">
                     <td class="py-3 px-2 text-slate-500">${idx+1}</td>
                     <td class="text-left py-3 pl-2">
                         <a href="${team.tg}" target="_blank" class="flex items-center gap-2 cursor-pointer hover:underline">
@@ -241,7 +318,7 @@
                     <td class="py-3 hidden sm:table-cell">${team.gf}</td>
                     <td class="py-3 hidden sm:table-cell">${team.ga}</td>
                     <td class="py-3">${team.gd}</td>
-                    <td class="py-3 font-black text-[#003399]">${team.pts}</td>
+                    <td class="py-3 font-black text-[#d3010c]">${team.pts}</td>
                 </tr>
             `).join('');
         }
@@ -251,7 +328,7 @@
             if (n >= 0 && n < TOTAL_ROUNDS) { 
                 currentViewingMatchday = n; 
                 document.querySelectorAll('#matchday-selector-container button').forEach((b, idx) => {
-                    b.className = `flex-shrink-0 px-3 py-1 rounded-lg font-bold text-[10px] border ${idx === n ? 'bg-[#003399] text-white' : 'bg-white text-slate-500 border-slate-200'}`;
+                    b.className = `flex-shrink-0 px-3 py-1 rounded-lg font-bold text-[10px] border ${idx === n ? 'bg-[#d3010c] text-white' : 'bg-white text-slate-500 border-slate-200'}`;
                 });
                 renderFixtures(); 
             }
