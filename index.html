@@ -87,109 +87,108 @@
 
     <script>
         const TEAMS_LIST = [
-            { id: "FCB", name: "Bayern Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg", tg: "https://t.me/itxkian223Z" },
-            { id: "BVB", name: "Dortmund", logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg", tg: "https://t.me/soelay0" },
-            { id: "RBL", name: "RB Leipzig", logo: "https://upload.wikimedia.org/wikipedia/en/0/04/RB_Leipzig_2014_logo.svg", tg: "https://t.me/johnharry73" },
-            { id: "B04", name: "Leverkusen", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Bayer_04_Leverkusen_logo.svg/1280px-Bayer_04_Leverkusen_logo.svg.png", tg: "https://t.me/kenzjust" },
-            { id: "SGE", name: "Frankfurt", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Eintracht_Frankfurt_crest.svg/1280px-Eintracht_Frankfurt_crest.svg.png", tg: "https://t.me/UKyawMaung13" },
-            { id: "FCU", name: "Union Berlin", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/1._FC_Union_Berlin_Logo.svg", tg: "https://t.me/Mg_Leon2" },
-            { id: "SCF", name: "Freiburg", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/SC_Freiburg_logo.svg/960px-SC_Freiburg_logo.svg.png", tg: "https://t.me/Xuman88" },
-            { id: "SVW", name: "Werder Bremen", logo: "https://upload.wikimedia.org/wikipedia/commons/b/be/SV-Werder-Bremen-Logo.svg", tg: "https://t.me/Nyanzayar" },
-            { id: "STP", name: "Saint Pauli", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/81/FC_St._Pauli_logo.svg/250px-FC_St._Pauli_logo.svg.png", tg: "https://t.me/Cr7hmh" },
-            { id: "WOB", name: "Wolfsburg", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/VfL_Wolfsburg_logo_2026.svg/1280px-VfL_Wolfsburg_logo_2026.svg.png", tg: "https://t.me/Aung_Htet_Paing23" },
-            { id: "VFB", name: "VFB Stuttgart", logo: "https://upload.wikimedia.org/wikipedia/commons/e/eb/VfB_Stuttgart_1893_Logo.svg", tg: "https://t.me/MRTONE3" },
-            { id: "M05", name: "FSV Mainz 05", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Logo_Mainz_05.svg", tg: "https://t.me/Nyi2005MAY" }
+            { id: "FCB", name: "Bayern Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg", tg: "https://t.me/tddgdu" },
+            { id: "BVB", name: "Dortmund", logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg", tg: "https://t.me/KoKyaw_KYT" },
+            { id: "RBL", name: "RB Leipzig", logo: "https://upload.wikimedia.org/wikipedia/en/0/04/RB_Leipzig_2014_logo.svg", tg: "https://t.me/Myan_Khun" },
+            { id: "B04", name: "Leverkusen", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Bayer_04_Leverkusen_logo.svg/1280px-Bayer_04_Leverkusen_logo.svg.png", tg: "https://t.me/mikeyjn" },
+            { id: "SGE", name: "Frankfurt", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Eintracht_Frankfurt_crest.svg/1280px-Eintracht_Frankfurt_crest.svg.png", tg: "https://t.me/Veiotf" },
+            { id: "FCU", name: "Union Berlin", logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/1._FC_Union_Berlin_Logo.svg", tg: "https://t.me/merrydesu" },
+            { id: "SCF", name: "Freiburg", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6d/SC_Freiburg_logo.svg/960px-SC_Freiburg_logo.svg.png", tg: "https://t.me/" },
+            { id: "SVW", name: "Werder Bremen", logo: "https://upload.wikimedia.org/wikipedia/commons/b/be/SV-Werder-Bremen-Logo.svg", tg: "https://t.me/Turkey772" },
+            { id: "STP", name: "Saint Pauli", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/81/FC_St._Pauli_logo.svg/250px-FC_St._Pauli_logo.svg.png", tg: "https://t.me/kharkhar1225" },
+            { id: "WOB", name: "Wolfsburg", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/VfL_Wolfsburg_logo_2026.svg/1280px-VfL_Wolfsburg_logo_2026.svg.png", tg: "https://t.me/Badrul11" },
+            { id: "VFB", name: "VFB Stuttgart", logo: "https://upload.wikimedia.org/wikipedia/commons/e/eb/VfB_Stuttgart_1893_Logo.svg", tg: "https://t.me/Kyawthaik468" },
+            { id: "M05", name: "FSV Mainz 05", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Logo_Mainz_05.svg", tg: "https://t.me/Luman08" }
         ].map(t => ({...t, mp:0, w:0, d:0, l:0, gf:0, ga:0, gd:0, pts:0}));
 
-        // ရလဒ်များထည့်ရန် Format - { h: 'HomeID', a: 'AwayID', hs: Score, as: Score }
         const MATCH_RESULTS = {
             0: [
-                { h: 'RBL', a: 'WOB', hs: 0, as: 2  },
-                { h: 'B04', a: 'STP', hs: 4, as: 0 },
-                { h: 'SGE', a: 'SVW', hs: 7, as: 2 },
-                { h: 'FCU', a: 'SCF', hs: 5, as: 4  },
-                { h: 'BVB', a: 'VFB', hs: 1, as: 2 },
-                { h: 'FCB', a: 'M05',hs: 2, as: 3 }
+                { h: 'RBL', a: 'WOB' },
+                { h: 'B04', a: 'STP' },
+                { h: 'SGE', a: 'SVW' },
+                { h: 'FCU', a: 'SCF' },
+                { h: 'BVB', a: 'VFB' },
+                { h: 'FCB', a: 'M05' }
             ],
             1: [
-                { h: 'BVB', a: 'M05', hs: 9, as: 0 },
-                { h: 'RBL', a: 'FCB', hs: 6, as: 1 },
-                { h: 'B04', a: 'VFB', hs: 2, as: 0 },
-                { h: 'SGE', a: 'WOB', hs: 2, as: 3 },
-                { h: 'FCU', a: 'STP', hs: 7, as: 1 },
-                { h: 'SCF', a: 'SVW', hs: 6, as: 0 }
+                { h: 'BVB', a: 'M05' },
+                { h: 'RBL', a: 'FCB' },
+                { h: 'B04', a: 'VFB' },
+                { h: 'SGE', a: 'WOB' },
+                { h: 'FCU', a: 'STP' },
+                { h: 'SCF', a: 'SVW' }
             ],
             2: [
-                { h: 'RBL', a: 'M05', hs: 6, as: 2 },
-                { h: 'B04', a: 'BVB', hs: 2, as: 0 },
-                { h: 'SGE', a: 'FCB', hs: 5, as: 1 },
-                { h: 'FCU', a: 'VFB', hs: 3, as: 4 },
-                { h: 'SCF', a: 'WOB', hs: 0, as: 4 },
-                { h: 'SVW', a: 'STP', hs: 6, as: 0 }
+                { h: 'RBL', a: 'M05' },
+                { h: 'B04', a: 'BVB' },
+                { h: 'SGE', a: 'FCB' },
+                { h: 'FCU', a: 'VFB' },
+                { h: 'SCF', a: 'WOB' },
+                { h: 'SVW', a: 'STP' }
             ],
             3: [
-                { h: 'B04', a: 'M05', hs: 5, as: 4 },
-                { h: 'SGE', a: 'RBL', hs: 2, as: 4 },
-                { h: 'FCU', a: 'BVB', hs: 3, as: 8 },
-                { h: 'SCF', a: 'FCB', hs: 4, as: 0 },
-                { h: 'SVW', a: 'VFB', hs: 2, as: 0 },
-                { h: 'STP', a: 'WOB', hs: 0, as: 6 }
+                { h: 'B04', a: 'M05' },
+                { h: 'SGE', a: 'RBL' },
+                { h: 'FCU', a: 'BVB' },
+                { h: 'SCF', a: 'FCB' },
+                { h: 'SVW', a: 'VFB' },
+                { h: 'STP', a: 'WOB' }
             ],
             4: [
-                { h: 'SGE', a: 'M05', hs: 3, as: 0 },
-                { h: 'FCU', a: 'B04', hs: 5, as: 2 },
-                { h: 'SCF', a: 'RBL', hs: 6, as: 0 },
-                { h: 'SVW', a: 'BVB', hs: 4, as: 1 },
-                { h: 'STP', a: 'FCB', hs: 0, as: 3 },
-                { h: 'WOB', a: 'VFB', hs: 5, as: 1 }
+                { h: 'SGE', a: 'M05' },
+                { h: 'FCU', a: 'B04' },
+                { h: 'SCF', a: 'RBL' },
+                { h: 'SVW', a: 'BVB' },
+                { h: 'STP', a: 'FCB' },
+                { h: 'WOB', a: 'VFB' }
             ],
             5: [
-                { h: 'FCU', a: 'M05', hs: 6, as: 3 },
-                { h: 'SCF', a: 'SGE', hs: 2, as: 1 },
-                { h: 'SVW', a: 'B04', hs: 0, as: 3},
-                { h: 'STP', a: 'RBL', hs: 2, as: 3 },
-                { h: 'WOB', a: 'BVB', hs: 3, as: 0 },
-                { h: 'VFB', a: 'FCB', hs: 3, as: 2 }
+                { h: 'FCU', a: 'M05' },
+                { h: 'SCF', a: 'SGE' },
+                { h: 'SVW', a: 'B04' },
+                { h: 'STP', a: 'RBL' },
+                { h: 'WOB', a: 'BVB' },
+                { h: 'VFB', a: 'FCB' }
             ],
             6: [
-                { h: 'SCF', a: 'M05', hs: 4, as: 0  },
-                { h: 'SVW', a: 'FCU', hs: 3, as: 1  },
-                { h: 'STP', a: 'SGE', hs: 0 , as: 3 }, 
-                { h: 'WOB', a: 'B04', hs: 4, as: 3  },
-                { h: 'VFB', a: 'RBL', hs: 3, as: 0  },
-                { h: 'FCB', a: 'BVB', hs: 1 , as: 3  }
+                { h: 'SCF', a: 'M05' },
+                { h: 'SVW', a: 'FCU' },
+                { h: 'STP', a: 'SGE' },
+                { h: 'WOB', a: 'B04' },
+                { h: 'VFB', a: 'RBL' },
+                { h: 'FCB', a: 'BVB' }
             ],
             7: [
-                { h: 'SVW', a: 'M05', hs: 3, as: 0 },
-                { h: 'STP', a: 'SCF', hs: 0, as: 3},
-                { h: 'WOB', a: 'FCU', hs: 3, as: 2 },
-                { h: 'VFB', a: 'SGE', hs: 2, as: 3},
-                { h: 'FCB', a: 'B04', hs: 1, as: 6},
-                { h: 'BVB', a: 'RBL', hs: 3, as: 0}
+                { h: 'SVW', a: 'M05' },
+                { h: 'STP', a: 'SCF' },
+                { h: 'WOB', a: 'FCU' },
+                { h: 'VFB', a: 'SGE' },
+                { h: 'FCB', a: 'B04' },
+                { h: 'BVB', a: 'RBL' }
             ],
             8: [
-                { h: 'STP', a: 'M05', hs: 0, as: 3},
-                { h: 'WOB', a: 'SVW', hs: 9, as: 1},
-                { h: 'VFB', a: 'SCF', hs: 2, as: 5},
-                { h: 'FCB', a: 'FCU', hs: 3, as: 4},
-                { h: 'BVB', a: 'SGE', hs: 5, as: 2},
-                { h: 'RBL', a: 'B04', hs: 0, as: 3}
+                { h: 'STP', a: 'M05' },
+                { h: 'WOB', a: 'SVW' },
+                { h: 'VFB', a: 'SCF' },
+                { h: 'FCB', a: 'FCU' },
+                { h: 'BVB', a: 'SGE' },
+                { h: 'RBL', a: 'B04' }
             ],
             9: [
-                { h: 'WOB', a: 'M05', hs: 3, as: 0 },
-                { h: 'VFB', a: 'STP', hs: 3, as: 0 },
-                { h: 'FCB', a: 'SVW', hs: 2, as: 3 },
-                { h: 'BVB', a: 'SCF' ,hs: 4, as: 4 },
-                { h: 'RBL', a: 'FCU' ,hs: 0, as: 3},
-                { h: 'B04', a: 'SGE', hs: 4, as: 3}
+                { h: 'WOB', a: 'M05' },
+                { h: 'VFB', a: 'STP' },
+                { h: 'FCB', a: 'SVW' },
+                { h: 'BVB', a: 'SCF' },
+                { h: 'RBL', a: 'FCU' },
+                { h: 'B04', a: 'SGE' }
             ],
             10: [
-                { h: 'VFB', a: 'M05', hs: 6, as: 1 },
-                { h: 'FCB', a: 'WOB', hs: 0, as: 3 },
-                { h: 'BVB', a: 'STP', hs: 8, as: 0 },
-                { h: 'RBL', a: 'SVW', hs: 0, as: 3 },
-                { h: 'B04', a: 'SCF', hs: 2, as: 6 },
-                { h: 'SGE', a: 'FCU', hs: 4, as: 3 }
+                { h: 'VFB', a: 'M05' },
+                { h: 'FCB', a: 'WOB' },
+                { h: 'BVB', a: 'STP' },
+                { h: 'RBL', a: 'SVW' },
+                { h: 'B04', a: 'SCF' },
+                { h: 'SGE', a: 'FCU' }
             ]
         };
 
@@ -197,7 +196,6 @@
 
         window.onload = function() { 
             generateFixedRoundRobinFixtures(); 
-            calculateStandings();
             renderMatchdaySelector(); 
             renderFixtures(); 
         };
@@ -222,30 +220,6 @@
                 }
                 fixtures.push(roundMatches);
             }
-        }
-
-        function calculateStandings() {
-            TEAMS_LIST.forEach(t => { t.mp=0; t.w=0; t.d=0; t.l=0; t.gf=0; t.ga=0; t.gd=0; t.pts=0; });
-
-            Object.values(MATCH_RESULTS).forEach(round => {
-                round.forEach(match => {
-                    if (match.hs !== undefined && match.as !== undefined) {
-                        const h = TEAMS_LIST.find(t => t.id === match.h);
-                        const a = TEAMS_LIST.find(t => t.id === match.a);
-
-                        if(!h || !a) return;
-
-                        h.mp++; a.mp++;
-                        h.gf += match.hs; h.ga += match.as;
-                        a.gf += match.as; a.ga += match.hs;
-                        h.gd = h.gf - h.ga; a.gd = a.gf - a.ga;
-
-                        if (match.hs > match.as) { h.pts += 3; h.w++; a.l++; }
-                        else if (match.hs < match.as) { a.pts += 3; a.w++; h.l++; }
-                        else { h.pts += 1; a.pts += 1; h.d++; a.d++; }
-                    }
-                });
-            });
         }
 
         function renderMatchdaySelector() {
@@ -276,10 +250,6 @@
                 const h = TEAMS_LIST.find(t => t.id === match.home);
                 const a = TEAMS_LIST.find(t => t.id === match.away);
 
-                const result = MATCH_RESULTS[currentViewingMatchday]?.find(r => r.h === h.id && r.a === a.id);
-                const isCancelled = result && result.st === 'Cancelled';
-                const hasScore = result && result.hs !== undefined && result.as !== undefined;
-
                 const card = document.createElement('div');
                 card.className = "bg-white border border-slate-100 rounded-xl p-3 flex items-center justify-between shadow-sm";
                 card.innerHTML = `
@@ -288,7 +258,7 @@
                         <span class="text-xs font-bold truncate text-slate-700">${h.name}</span>
                     </a>
                     <div class="flex flex-col items-center w-[20%]">
-                        ${isCancelled ? `<span class="text-red-500 font-black text-[8px] uppercase">Cancelled</span>` : (hasScore ? `<span class="text-[#d3010c] font-black text-sm">${result.hs} - ${result.as}</span>` : '<span class="text-[#d3010c] font-black text-[10px]">VS</span>')}
+                        <span class="text-[#d3010c] font-black text-[10px]">VS</span>
                     </div>
                     <a href="${a.tg}" target="_blank" class="flex items-center gap-2 w-[40%] justify-end cursor-pointer hover:opacity-70">
                         <span class="text-xs font-bold truncate text-slate-700">${a.name}</span>
@@ -300,8 +270,8 @@
 
         function updateStandingsTable() {
             const tbody = document.getElementById('standings-table-body');
-            const sortedTeams = [...TEAMS_LIST].sort((a, b) => b.pts - a.pts || b.gd - a.gd);
-
+            // Mock empty stats for now since no results exist
+            const sortedTeams = [...TEAMS_LIST];
             tbody.innerHTML = sortedTeams.map((team, idx) => `
                 <tr class="hover:bg-red-50 transition-colors">
                     <td class="py-3 px-2 text-slate-500">${idx+1}</td>
@@ -311,14 +281,14 @@
                             <span class="font-bold text-slate-800">${team.name}</span>
                         </a>
                     </td>
-                    <td class="py-3">${team.mp}</td>
-                    <td class="py-3">${team.w}</td>
-                    <td class="py-3">${team.d}</td>
-                    <td class="py-3">${team.l}</td>
-                    <td class="py-3 hidden sm:table-cell">${team.gf}</td>
-                    <td class="py-3 hidden sm:table-cell">${team.ga}</td>
-                    <td class="py-3">${team.gd}</td>
-                    <td class="py-3 font-black text-[#d3010c]">${team.pts}</td>
+                    <td class="py-3">0</td>
+                    <td class="py-3">0</td>
+                    <td class="py-3">0</td>
+                    <td class="py-3">0</td>
+                    <td class="py-3 hidden sm:table-cell">0</td>
+                    <td class="py-3 hidden sm:table-cell">0</td>
+                    <td class="py-3">0</td>
+                    <td class="py-3 font-black text-[#d3010c]">0</td>
                 </tr>
             `).join('');
         }
