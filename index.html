@@ -105,7 +105,7 @@
 
         window.onload = function() { 
             generateFixedRoundRobinFixtures(); 
-            // Injects scores for Round 1 (Index 0)
+            // Injects scores for Round 1
             fixtures[0] = [
                 { home: 'FCB', away: 'M05', hs: 3, as: 2 },
                 { home: 'BVB', away: 'VFB', hs: 4, as: 4 },
@@ -113,6 +113,15 @@
                 { home: 'B04', away: 'STP', hs: 0, as: 3 },
                 { home: 'SGE', away: 'SVW', hs: 1, as: 7 },
                 { home: 'FCU', away: 'SCF', hs: 3, as: 0 }
+            ];
+            // Injects scores for Round 2
+            fixtures[1] = [
+                { home: 'BVB', away: 'M05', hs: 7, as: 0 },
+                { home: 'RBL', away: 'FCB', hs: 5, as: 1 },
+                { home: 'B04', away: 'VFB', hs: 3, as: 6 },
+                { home: 'SGE', away: 'WOB', hs: 2, as: 6 },
+                { home: 'FCU', away: 'STP', hs: 0, as: 4 },
+                { home: 'SCF', away: 'SVW', hs: 1, as: 2 }
             ];
             renderMatchdaySelector(); 
             renderFixtures(); 
@@ -166,7 +175,6 @@
                 const h = TEAMS_LIST.find(t => t.id === match.home);
                 const a = TEAMS_LIST.find(t => t.id === match.away);
                 
-                // Determine if score should be shown
                 const hasScore = match.hs !== undefined && match.hs !== null;
                 const scoreDisplay = hasScore ? `${match.hs} - ${match.as}` : "VS";
                 const scoreColor = hasScore ? "text-slate-800 font-black" : "text-[#d3010c] font-black";
