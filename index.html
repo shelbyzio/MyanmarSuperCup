@@ -153,14 +153,22 @@
                 { home: 'WOB', away: 'BVB', hs: 4, as: 2 },
                 { home: 'VFB', away: 'FCB', hs: 5, as: 2 }
             ];
-            // Added Round 7 results here
             fixtures[6] = [
-                { home: 'SCF', away: 'M05', hs: undefined, as: undefined },
+                { home: 'SCF', away: 'M05', hs: 0, as: 0 },
                 { home: 'SVW', away: 'FCU', hs: 0, as: 3 },
                 { home: 'STP', away: 'SGE', hs: 5, as: 3 },
                 { home: 'WOB', away: 'B04', hs: 6, as: 1 },
                 { home: 'VFB', away: 'RBL', hs: 2, as: 8 },
                 { home: 'FCB', away: 'BVB', hs: 0, as: 2 }
+            ];
+            // Round 8 Added
+            fixtures[7] = [
+                { home: 'SVW', away: 'M05', hs: 3, as: 0 },
+                { home: 'STP', away: 'SCF', hs: null, as: null },
+                { home: 'WOB', away: 'FCU', hs: 3, as: 0 },
+                { home: 'VFB', away: 'SGE', hs: null, as: null },
+                { home: 'FCB', away: 'B04', hs: 2, as: 3 },
+                { home: 'BVB', away: 'RBL', hs: null, as: null }
             ];
             updateStandings();
             renderMatchdaySelector(); 
@@ -191,7 +199,7 @@
             TEAMS_LIST.forEach(t => { t.mp=0; t.w=0; t.d=0; t.l=0; t.gf=0; t.ga=0; t.gd=0; t.pts=0; });
             fixtures.forEach(round => {
                 round.forEach(match => {
-                    if (match.hs !== undefined && match.as !== undefined) {
+                    if (match.hs !== undefined && match.hs !== null && match.as !== undefined && match.as !== null) {
                         const h = TEAMS_LIST.find(t => t.id === match.home);
                         const a = TEAMS_LIST.find(t => t.id === match.away);
                         h.mp++; a.mp++;
