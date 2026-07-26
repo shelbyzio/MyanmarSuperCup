@@ -105,6 +105,7 @@
 
         window.onload = function() { 
             generateFixedRoundRobinFixtures(); 
+            // Previous rounds...
             fixtures[0] = [{ home: 'FCB', away: 'M05', hs: 3, as: 2 }, { home: 'BVB', away: 'VFB', hs: 4, as: 4 }, { home: 'RBL', away: 'WOB', hs: 3, as: 3 }, { home: 'B04', away: 'STP', hs: 0, as: 3 }, { home: 'SGE', away: 'SVW', hs: 1, as: 7 }, { home: 'FCU', away: 'SCF', hs: 3, as: 0 }];
             fixtures[1] = [{ home: 'BVB', away: 'M05', hs: 7, as: 0 }, { home: 'RBL', away: 'FCB', hs: 5, as: 1 }, { home: 'B04', away: 'VFB', hs: 3, as: 6 }, { home: 'SGE', away: 'WOB', hs: 2, as: 6 }, { home: 'FCU', away: 'STP', hs: 0, as: 4 }, { home: 'SCF', away: 'SVW', hs: 1, as: 2 }];
             fixtures[2] = [{ home: 'RBL', away: 'M05', hs: 5, as: 1 }, { home: 'B04', away: 'BVB', hs: 2, as: 3 }, { home: 'SGE', away: 'FCB', hs: 4, as: 1 }, { home: 'FCU', away: 'VFB', hs: 2, as: 1 }, { home: 'SCF', away: 'WOB', hs: 0, as: 4 }, { home: 'SVW', away: 'STP', hs: 4, as: 5 }];
@@ -113,20 +114,24 @@
             fixtures[5] = [{ home: 'FCU', away: 'M05', hs: 5, as: 1 }, { home: 'SCF', away: 'SGE', hs: 1, as: 5 }, { home: 'SVW', away: 'B04', hs: 1, as: 3 }, { home: 'STP', away: 'RBL', hs: 4, as: 1 }, { home: 'WOB', away: 'BVB', hs: 4, as: 2 }, { home: 'VFB', away: 'FCB', hs: 5, as: 2 }];
             fixtures[6] = [{ home: 'SCF', away: 'M05', hs: 0, as: 0 }, { home: 'SVW', away: 'FCU', hs: 0, as: 3 }, { home: 'STP', away: 'SGE', hs: 5, as: 3 }, { home: 'WOB', away: 'B04', hs: 6, as: 1 }, { home: 'VFB', away: 'RBL', hs: 2, as: 8 }, { home: 'FCB', away: 'BVB', hs: 0, as: 2 }];
             fixtures[7] = [{ home: 'SVW', away: 'M05', hs: 3, as: 0 }, { home: 'STP', away: 'SCF', hs: 3, as: 0 }, { home: 'WOB', away: 'FCU', hs: 3, as: 0 }, { home: 'VFB', away: 'SGE', hs: 3, as: 0 }, { home: 'FCB', away: 'B04', hs: 2, as: 3 }, { home: 'BVB', away: 'RBL', hs: 5, as: 4 }];
-            // Adding Round 9 results
-            fixtures[8] = [
-                { home: 'STP', away: 'M05', hs: 8, as: 0 },
-                { home: 'WOB', away: 'SVW', hs: 5, as: 3 },
-                { home: 'VFB', away: 'SCF', hs: 3, as: 0 },
-                { home: 'FCB', away: 'FCU', hs: 2, as: 3 },
-                { home: 'BVB', away: 'SGE', hs: 6, as: 1 },
-                { home: 'RBL', away: 'B04', hs: 2, as: 2 }
+            fixtures[8] = [{ home: 'STP', away: 'M05', hs: 8, as: 0 }, { home: 'WOB', away: 'SVW', hs: 5, as: 3 }, { home: 'VFB', away: 'SCF', hs: 3, as: 0 }, { home: 'FCB', away: 'FCU', hs: 2, as: 3 }, { home: 'BVB', away: 'SGE', hs: 6, as: 1 }, { home: 'RBL', away: 'B04', hs: 2, as: 2 }];
+            
+            // New: Adding Round 10 results
+            fixtures[9] = [
+                { home: 'WOB', away: 'M05', hs: 9, as: 1 },
+                { home: 'VFB', away: 'STP', hs: 2, as: 2 },
+                { home: 'FCB', away: 'SVW', hs: 0, as: 6 },
+                { home: 'BVB', away: 'SCF', hs: 3, as: 0 },
+                { home: 'RBL', away: 'FCU', hs: 5, as: 3 },
+                { home: 'B04', away: 'SGE', hs: 9, as: 1 }
             ];
+
             updateStandings();
             renderMatchdaySelector(); 
             renderFixtures(); 
         };
 
+        // Logic functions...
         function switchTab(tab) {
             document.getElementById('tab-fixtures-content').classList.toggle('hidden', tab !== 'fixtures');
             document.getElementById('tab-standings-content').classList.toggle('hidden', tab !== 'standings');
