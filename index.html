@@ -133,77 +133,94 @@
         import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyCG8xdfNHBFKo1VlfBYCYZTP-8vid3R97I",
-            authDomain: "superepl.firebaseapp.com",
-            projectId: "superepl",
-            storageBucket: "superepl.firebasestorage.app",
-            messagingSenderId: "885676848744",
-            appId: "1:885676848744:web:43f888f70044a13bc2eddd",
-            measurementId: "G-DW3YLDSYXJ"
+            apiKey: "",
+            authDomain: "",
+            projectId: "",
+            storageBucket: "",
+            messagingSenderId: "",
+            appId: "",
+            measurementId: ""
         };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
 
         const TEAMS_LIST = [ 
             { id: "BMU", name: "Bayern Munich", logo: "https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282002%E2%80%932024%29.svg", telegram: "https://t.me/Kavin_9356" },
-{ id: "BVB", name: "Dortmund", logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg", telegram: "https://t.me/" },
-{ id: "B04", name: "Leverkusen", logo: "https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg", telegram: "https://t.me/a_saw_chan" },
-{ id: "SGE", name: "Frankfurt", logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/Eintracht_Frankfurt_Logo.svg", telegram: "https://t.me/Bs134679" },
-{ id: "SCF", name: "Freiburg", logo: "https://upload.wikimedia.org/wikipedia/en/6/6d/SC_Freiburg_logo.svg", telegram: "https://t.me/native_burmese" },
-{ id: "TSG", name: "Hoffenheim", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/TSG_Hoffenheim_Logo.svg", telegram: "https://t.me/Hugosaito" },
-{ id: "KOE", name: "Koln", logo: "https://upload.wikimedia.org/wikipedia/en/5/53/1._FC_K%C3%B6ln_logo.svg", telegram: "https://t.me/bitchclick" },
-{ id: "SVW", name: "Werder Bremen", logo: "https://upload.wikimedia.org/wikipedia/commons/b/be/SV_Werder_Bremen_Logo.svg", telegram: "https://t.me/KaiZynxx" },
-{ id: "WOB", name: "Wolfsburg", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f3/VfL_Wolfsburg_Logo.svg", telegram: "https://t.me/ADY295810" },
-{ id: "VFB", name: "Stuttgart", logo: "https://upload.wikimedia.org/wikipedia/commons/e/eb/VfB_Stuttgart_1893_Logo.svg", telegram: "https://t.me/yoho26" },
-{ id: "STP", name: "Saint Pauli", logo: "https://upload.wikimedia.org/wikipedia/en/f/f0/FC_St._Pauli_logo.svg", telegram: "https://t.me/ADY295810" },
-{ id: "M05", name: "Mainz", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/1._FSV_Mainz_05_Logo.svg", telegram: "https://t.me/theinphyupyarmin" }
+            { id: "BVB", name: "Dortmund", logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg", telegram: "https://t.me/" },
+            { id: "B04", name: "Leverkusen", logo: "https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg", telegram: "https://t.me/a_saw_chan" },
+            { id: "SGE", name: "Frankfurt", logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/Eintracht_Frankfurt_Logo.svg", telegram: "https://t.me/Bs134679" },
+            { id: "SCF", name: "Freiburg", logo: "https://upload.wikimedia.org/wikipedia/en/6/6d/SC_Freiburg_logo.svg", telegram: "https://t.me/native_burmese" },
+            { id: "TSG", name: "Hoffenheim", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e7/TSG_Hoffenheim_Logo.svg", telegram: "https://t.me/Hugosaito" },
+            { id: "KOE", name: "Koln", logo: "https://upload.wikimedia.org/wikipedia/en/5/53/1._FC_K%C3%B6ln_logo.svg", telegram: "https://t.me/bitchclick" },
+            { id: "SVW", name: "Werder Bremen", logo: "https://upload.wikimedia.org/wikipedia/commons/b/be/SV_Werder_Bremen_Logo.svg", telegram: "https://t.me/KaiZynxx" },
+            { id: "WOB", name: "Wolfsburg", logo: "https://upload.wikimedia.org/wikipedia/commons/f/f3/VfL_Wolfsburg_Logo.svg", telegram: "https://t.me/ADY295810" },
+            { id: "VFB", name: "Stuttgart", logo: "https://upload.wikimedia.org/wikipedia/commons/e/eb/VfB_Stuttgart_1893_Logo.svg", telegram: "https://t.me/yoho26" },
+            { id: "STP", name: "Saint Pauli", logo: "https://upload.wikimedia.org/wikipedia/en/f/f0/FC_St._Pauli_logo.svg", telegram: "https://t.me/ADY295810" },
+            { id: "M05", name: "Mainz", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/1._FSV_Mainz_05_Logo.svg", telegram: "https://t.me/theinphyupyarmin" }
         ];
 
         let fixtures = [], currentViewingMatchday = 0, TOTAL_ROUNDS = 11;
         let standingsData = [];
-        let RESULTS = {};
+        let RESULTS = {
+            0: [
+                { home: "BMU", away: "M05", hs: 3, as: 0 },
+                { home: "BVB", away: "STP", hs: "", as: "" },
+                { home: "B04", away: "VFB", hs: 4, as: 0 },
+                { home: "SGE", away: "WOB", hs: 3, as: 1 },
+                { home: "SCF", away: "SVW", hs: 3, as: 3 },
+                { home: "TSG", away: "KOE", hs: 3, as: 0 }
+            ]
+        };
 
         window.onload = async function() {
             generateFixedRoundRobinFixtures();
             renderMatchdaySelector();
 
             try {
-                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
-                    try {
-                        await signInWithCustomToken(auth, __initial_auth_token);
-                    } catch (customErr) {
-                        console.warn("Custom token sign-in failed, falling back to anonymous auth:", customErr);
+                if (firebaseConfig.apiKey && firebaseConfig.apiKey.trim() !== "") {
+                    const app = initializeApp(firebaseConfig);
+                    const auth = getAuth(app);
+                    const db = getFirestore(app);
+
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        try {
+                            await signInWithCustomToken(auth, __initial_auth_token);
+                        } catch (customErr) {
+                            await signInAnonymously(auth);
+                        }
+                    } else {
                         await signInAnonymously(auth);
                     }
+
+                    const docRef = doc(db, 'tournament_results', 'premier_league_12_team');
+                    onSnapshot(docRef, (docSnap) => {
+                        if (docSnap.exists() && docSnap.data().results) {
+                            const remoteRes = docSnap.data().results;
+                            if (remoteRes && Object.keys(remoteRes).length > 0) {
+                                RESULTS = remoteRes;
+                            }
+                        } else {
+                            setDoc(docRef, { results: RESULTS }).catch(console.error);
+                        }
+                        processAllResults();
+                        renderFixtures();
+                        updateStandingsTable();
+                    }, (error) => {
+                        console.error("Firestore listener error:", error);
+                        processAllResults();
+                        renderFixtures();
+                        updateStandingsTable();
+                    });
                 } else {
-                    await signInAnonymously(auth);
+                    // Fallback local mode when API keys are omitted
+                    document.getElementById('sync-status').innerText = 'Local Mode';
+                    document.getElementById('sync-status').className = 'text-xs font-bold text-amber-600';
+                    processAllResults();
+                    renderFixtures();
+                    updateStandingsTable();
                 }
-
-                const docRef = doc(db, 'tournament_results', 'premier_league_12_team');
-
-                onSnapshot(docRef, (docSnap) => {
-                    if (docSnap.exists() && docSnap.data().results) {
-                        RESULTS = docSnap.data().results;
-                    } else {
-                        RESULTS = {};
-                        setDoc(docRef, { results: RESULTS }).catch(console.error);
-                    }
-                    processAllResults();
-                    renderFixtures();
-                    updateStandingsTable();
-                }, (error) => {
-                    console.error("Firestore listener error:", error);
-                    RESULTS = {};
-                    processAllResults();
-                    renderFixtures();
-                    updateStandingsTable();
-                });
-
             } catch (e) {
-                console.error("Auth/Init error:", e);
-                RESULTS = {};
+                console.warn("Firebase initialization skipped or failed, running in local mode:", e);
+                document.getElementById('sync-status').innerText = 'Local Mode';
+                document.getElementById('sync-status').className = 'text-xs font-bold text-amber-600';
                 processAllResults();
                 renderFixtures();
                 updateStandingsTable();
@@ -362,7 +379,8 @@
             const roundResults = RESULTS[roundIdx] || [];
 
             roundData.forEach((match) => {
-                const h = TEAMS_LIST.find(t => t.id === match.home), a = TEAMS_LIST.find(t => t.id === match.away);
+                const h = TEAMS_LIST.join ? null : TEAMS_LIST.find(t => t.id === match.home);
+                const a = TEAMS_LIST.find(t => t.id === match.away);
                 const res = roundResults.find(r => r.home === h.id && r.away === a.id) || { home: h.id, away: a.id, hs: '', as: '' };
 
                 const row = document.createElement('div');
@@ -404,14 +422,7 @@
             processAllResults();
             renderFixtures();
             updateStandingsTable();
-
-            try {
-                const docRef = doc(db, 'tournament_results', 'premier_league_12_team');
-                await setDoc(docRef, { results: RESULTS });
-                closeAdminModal();
-            } catch(err) {
-                console.error("Error saving to Firebase:", err);
-            }
+            closeAdminModal();
         };
     </script>
 </body>
