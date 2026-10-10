@@ -167,6 +167,14 @@
                 { home: "SGE", away: "WOB", hs: 3, as: 1 },
                 { home: "SCF", away: "SVW", hs: 3, as: 3 },
                 { home: "TSG", away: "KOE", hs: 3, as: 0 }
+            ],
+            1: [
+                { home: "BVB", away: "M05", hs: "", as: "" },
+                { home: "B04", away: "BMU", hs: 8, as: 2 },
+                { home: "SGE", away: "STP", hs: 9, as: 0 },
+                { home: "SCF", away: "VFB", hs: "", as: "" },
+                { home: "TSG", away: "WOB", hs: 5, as: 5 },
+                { home: "KOE", away: "SVW", hs: 5, as: 1 }
             ]
         };
 
@@ -210,7 +218,6 @@
                         updateStandingsTable();
                     });
                 } else {
-                    // Fallback local mode when API keys are omitted
                     document.getElementById('sync-status').innerText = 'Local Mode';
                     document.getElementById('sync-status').className = 'text-xs font-bold text-amber-600';
                     processAllResults();
@@ -379,7 +386,7 @@
             const roundResults = RESULTS[roundIdx] || [];
 
             roundData.forEach((match) => {
-                const h = TEAMS_LIST.join ? null : TEAMS_LIST.find(t => t.id === match.home);
+                const h = TEAMS_LIST.find(t => t.id === match.home);
                 const a = TEAMS_LIST.find(t => t.id === match.away);
                 const res = roundResults.find(r => r.home === h.id && r.away === a.id) || { home: h.id, away: a.id, hs: '', as: '' };
 
