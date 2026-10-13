@@ -159,6 +159,8 @@
 
         let fixtures = [], currentViewingMatchday = 0, TOTAL_ROUNDS = 11;
         let standingsData = [];
+        
+        // Updated results reflecting user requested scores for Matchday R2 (index 1) and R4 (index 3)
         let RESULTS = {
             0: [
                 { home: "BMU", away: "M05", hs: 3, as: 0 },
@@ -169,10 +171,10 @@
                 { home: "TSG", away: "KOE", hs: 3, as: 0 }
             ],
             1: [
-                { home: "BVB", away: "M05", hs: "", as: "" },
+                { home: "BVB", away: "M05", hs: 3, as: 0 },
+                { home: "SCF", away: "VFB", hs: 2, as: 4 },
                 { home: "B04", away: "BMU", hs: 8, as: 2 },
                 { home: "SGE", away: "STP", hs: 9, as: 0 },
-                { home: "SCF", away: "VFB", hs: 3, as: 0 },
                 { home: "TSG", away: "WOB", hs: 5, as: 5 },
                 { home: "KOE", away: "SVW", hs: 5, as: 1 }
             ],
@@ -186,6 +188,8 @@
                 { home: "SVW", away: "WOB", hs: 0, as: 3 }
             ],
             3: [
+                { home: "TSG", away: "BVB", hs: 6, as: 8 },
+                { home: "SVW", away: "STP", hs: "", as: "" },
                 { home: "SGE", away: "M05", hs: 4, as: 3 },
                 { home: "SCF", away: "B04", hs: 6, as: 7 },
                 { home: "KOE", away: "BMU", hs: 1, as: 6 },
