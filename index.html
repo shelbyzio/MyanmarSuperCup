@@ -209,11 +209,20 @@
                 { home: "WOB", away: "B04", hs: 2, as: 10 },
                 { home: "VFB", away: "BVB", hs: 2, as: 8 },
                 { home: "STP", away: "BMU", hs: 0, as: 3 }
+            ],
+            6: [
+                { home: "KOE", away: "M05", hs: 3, as: 0 },
+                { home: "SVW", away: "TSG", hs: 1, as: 4 },
+                { home: "WOB", away: "SCF", hs: 0, as: 3 },
+                { home: "VFB", away: "SGE", hs: 4, as: 2 },
+                { home: "STP", away: "B04", hs: 0, as: 3 },
+                { home: "BMU", away: "BVB", hs: 4, as: 2 }
             ]
         };
 
         window.onload = async function() {
             generateFixedRoundRobinFixtures();
+            TOTAL_ROUNDS = fixtures.length;
             renderMatchdaySelector();
 
             try {
@@ -269,10 +278,8 @@
         };
 
         function processAllResults() {
-            // Reset standings stats
             standingsData = TEAMS_LIST.map(t => ({ ...t, mp: 0, w: 0, d: 0, l: 0, gf: 0, ga: 0, gd: 0, pts: 0 }));
             
-            // Loop through each round fixture and apply results if available
             fixtures.forEach((roundFixtures, rIdx) => {
                 const roundResults = RESULTS[rIdx] || [];
                 roundFixtures.forEach(fix => {
@@ -385,11 +392,6 @@
             const tbody = document.getElementById('standings-table-body');
             if(!tbody) return;
             
-            // Bundesliga official tie-breaker sorting rules:
-            // 1. Points (Pts) - descending
-            // 2. Goal Difference (GD) - descending
-            // 3. Goals For (GF) - descending
-            // 4. Alphabetical name - ascending
             const sorted = [...standingsData].sort((a, b) => {
                 if (b.pts !== a.pts) return b.pts - a.pts;
                 if (b.gd !== a.gd) return b.gd - a.gd;
