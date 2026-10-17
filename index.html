@@ -157,7 +157,7 @@
             { id: "M05", name: "Mainz", logo: "https://upload.wikimedia.org/wikipedia/commons/9/9e/1._FSV_Mainz_05_Logo.svg", telegram: "https://t.me/theinphyupyarmin" }
         ];
 
-        let fixtures = [], currentViewingMatchday = 0, TOTAL_ROUNDS = 11;
+        let fixtures = [], currentViewingMatchday = 7, TOTAL_ROUNDS = 11;
         let standingsData = [];
         
         let RESULTS = {
@@ -217,6 +217,14 @@
                 { home: "VFB", away: "SGE", hs: 4, as: 2 },
                 { home: "STP", away: "B04", hs: 0, as: 3 },
                 { home: "BMU", away: "BVB", hs: 4, as: 2 }
+            ],
+            7: [
+                { home: "SVW", away: "M05", hs: "", as: "" },
+                { home: "WOB", away: "KOE", hs: 0, as: 3 },
+                { home: "VFB", away: "TSG", hs: 3, as: 4 },
+                { home: "STP", away: "SCF", hs: 0, as: 3 },
+                { home: "BMU", away: "SGE", hs: 3, as: 5 },
+                { home: "BVB", away: "B04", hs: 5, as: 6 }
             ]
         };
 
@@ -347,7 +355,7 @@
             container.innerHTML = '';
             for (let r = 0; r < TOTAL_ROUNDS; r++) {
                 const btn = document.createElement('button');
-                btn.className = `flex-shrink-0 px-3 py-1 rounded-lg font-bold text-[10px] border ${r === 0 ? 'bg-[#d3010c] text-white border-[#d3010c]' : 'bg-white text-slate-600 border-slate-200'}`;
+                btn.className = `flex-shrink-0 px-3 py-1 rounded-lg font-bold text-[10px] border ${r === currentViewingMatchday ? 'bg-[#d3010c] text-white border-[#d3010c]' : 'bg-white text-slate-600 border-slate-200'}`;
                 btn.innerText = `R${r + 1}`;
                 btn.onclick = () => { 
                     currentViewingMatchday = r; 
